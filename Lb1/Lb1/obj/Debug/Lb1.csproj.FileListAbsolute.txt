@@ -1,0 +1,7 @@
+C:\Users\mac\Desktop\Николай\C#\ООП\Лр№1\Lb1\Lb1\bin\Debug\Lb1.exe.config
+C:\Users\mac\Desktop\Николай\C#\ООП\Лр№1\Lb1\Lb1\bin\Debug\Lb1.exe
+C:\Users\mac\Desktop\Николай\C#\ООП\Лр№1\Lb1\Lb1\bin\Debug\Lb1.pdb
+C:\Users\mac\Desktop\Николай\C#\ООП\Лр№1\Lb1\Lb1\obj\Debug\Lb1.csprojAssemblyReference.cache
+C:\Users\mac\Desktop\Николай\C#\ООП\Лр№1\Lb1\Lb1\obj\Debug\Lb1.csproj.CoreCompileInputs.cache
+C:\Users\mac\Desktop\Николай\C#\ООП\Лр№1\Lb1\Lb1\obj\Debug\Lb1.exe
+C:\Users\mac\Desktop\Николай\C#\ООП\Лр№1\Lb1\Lb1\obj\Debug\Lb1.pdb
