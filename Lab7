@@ -1,0 +1,115 @@
+﻿//Написати програму, що виконує наступні функції:
+//1. Виводить на екран введене число з клавіатури в зворотному порядку(1234-&gt;4321)
+//2. Виводить будь-яку строку в зворотному порядку(АБВ-&gt; ВБА)
+//3. Дробові числа виводяться в зворотному порядку і ціла частина і дробова(123.456-
+//&gt;321.654)
+//4. Виводити будь-яку строку в зворотному порядку і всі елементи після “магічного
+//знаку” теж в зворотному(АБВ, ГДЕ-&gt; ВБА,ЕДГ)
+//5. Реалізувати пункти 1-4 за допомогою методів, перевантаживши методи для різних
+//типів
+//6. Реалізувати пункти 1-4 за допомогою рекурсії, методи для різних типів
+//перевантажити
+//7. Реалізувати метод, що буде масив повертати задом навпаки(Використання
+//Array.Reverse() заборонено!)
+//8. Виконати пункт 7 з використанням ключових слів ref i out
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Overloading_methods
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int a,length;
+            string s, t;
+            string qw;
+            double b;
+            char[] arr;
+            Console.Write("enter length of array: ");
+            length = int.Parse(Console.ReadLine());
+            Console.Write("enter number: ");
+            a = int.Parse(Console.ReadLine());
+            Console.Write("enter string: ");
+            s = Console.ReadLine();
+            Console.Write("enter number-double: ");
+            b = double.Parse(Console.ReadLine());
+            Console.Write("enter string in format string,srting: ");
+            qw = Console.ReadLine();
+            arr = new char[length];
+            for(int i=0;i<length;i++)
+            {
+                arr[i] = char.Parse(Console.ReadLine());
+            }
+            Reverse(ref a);
+            //t = Reverse(s, out t);
+            Reverse(ref b);
+            Reverse(ref qw);
+            Reverse(ref arr);
+            for (int i = 0; i < length; i++)
+            {
+                Console.WriteLine(arr[i]);
+            }
+            Console.WriteLine($"a= {a}");
+            Console.WriteLine($"s= {t}");
+            Console.WriteLine($"b= {b}");
+            Console.WriteLine($"qw= {qw}");
+            
+            Console.Read();
+        }
+        static void Reverse(ref int x)
+        {
+            string s = x.ToString();
+            s = Reversestring(s);
+            x = int.Parse(s);
+        }
+        //static string Reverse(string x, out string y)
+        {
+            y = Reversestring(x);
+            return y;
+        }
+        static void Reverse(ref double x)
+        {
+            string str1, str2;
+            string s = x.ToString();
+            int dotLocation = s.IndexOf(",", StringComparison.Ordinal);
+
+            string beforecomma = s.Substring(0, dotLocation);
+
+            string aftercomma = s.Substring(dotLocation + 1);
+            str1 = Reversestring(beforecomma);
+            str2 = Reversestring(aftercomma);
+            string result = str1 + "," + str2;
+            x = double.Parse(result);
+        }
+
+
+        //static void Reverse(ref string x)
+        {
+            string str1, str2;
+            int commalocation = x.IndexOf(",", StringComparison.Ordinal);
+            string beforecomma = x.Substring(0, commalocation);
+            string aftercomma = x.Substring(commalocation + 1);
+
+            str1 = Reversestring(beforecomma);
+            str2 = Reversestring(aftercomma);
+            x = str1 + "," + str2;
+        }
+
+        static string Reversestring(string d)
+        {
+            if (d.Length == 0)
+            {
+                return "";
+            }
+            else
+            {
+                return Reversestring(d.Substring(1)) + d[0];
+            }
+        }
+
+    }
+}
